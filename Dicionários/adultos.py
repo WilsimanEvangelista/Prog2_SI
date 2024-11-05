@@ -4,15 +4,15 @@ def insert_dict(d:dict, name:str, age:int, tel:str) -> dict:
     return d
 
 def remove_minors(d:dict) -> None:
-    for key in d:
-        if d[key][0] < 18:
-            del d[key]
+    key_remove = [key for key in d if d[key][0] < 18]
+    for key in key_remove:
+        del d[key]
     print_dict(d)
 
 def print_dict(d:dict) -> None:
     print("Maiores de idade:")
     for key in d:
-        print(f"{key} - Idade: {d[key][0]} - Telefone: {d[key][1]}")
+        print(f"Nome: {key} - Telefone: {d[key][1]}")
 
 def main():
     d = {}
